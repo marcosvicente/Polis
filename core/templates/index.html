@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title></title>
+        <link rel="stylesheet" href="/static/css/foundation.min.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="/static/css/normalize.css" type="text/css" media="all" />
+        <script src="/static/js/vendor/custom.modernizr.js"></script>
+        <link rel="stylesheet" href="/static/css/master.css" media="screen" title="no title" charset="utf-8">
+
+
+    </head>
+    <body>
+        <nav class="top-bar" data-topbar role="navigation">
+            <ul class="title-area">
+                <li class="name"><h1><a href="#">Polis</a></h1></li>
+                <li class="toggle-topbar"><a href="#">Menu</a></li>
+            </ul>
+            <section class="top-bar-section">
+                <ul class="right">
+      	            <li><a href="#">Home</a></li>
+      		        <li><a href="#">Notificações</a></li>
+
+                    <li class="has-dropdown"><a href="#">Opções</a>
+              	        <ul class="dropdown">
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Configurações</a></li>
+                            <li><a href="#">Sair</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-form">
+                    <div class="row collapse">
+                        <div class="large-8 small-9 columns">
+                            <input type="text" placeholder="Busca...">
+                      </div>
+                    <div class="large-4 small-3 columns">
+                        <a href="#" class="alert button radius" >Buscar</a>
+                    </div>
+                    </div>
+                    </li>
+                </ul>
+            </section>
+      </nav>
+
+
+      <div class="row">
+          <div class="panel">
+                <div class="small-12 small-centered columns">
+                    <div class="icon-bar four-up" role="navigation">
+                    <a class="item" id="menu-eventos">
+                        <img src="/static/img/evento.svg">
+                    </a>
+                    <a class="item" id="menu-texto" onclick="AbrirEvento()">
+                        <img src="/static/img/noticia.svg" onclick="AbrirEvento()" >
+                    </a>
+                    <a class="item" id="menu-fotos">
+                        <img src="/static/img/foto.svg">
+                    </a>
+                    <a class="item" id="menu-camera">
+                        <img src="/static/img/video.svg" >
+                    </a>
+                </div>
+              </div>
+              <script type="text/javascript" src="http://cidades-estados-js.googlecode.com/files/cidades-estados-v0.2.js"></script>
+                  <script type="text/javascript">
+                     window.onload = function() {
+                         new dgCidadesEstados(
+                             document.getElementById('estado'),
+                             document.getElementById('cidade'),
+                             true
+                         );
+                     }
+                   </script>
+                    <form id="criar-evento">
+                        <div class="row">
+                            <div class="small-6 medium-6  columns">
+                    			<label>Estado</label>
+                                <select id="estado" name="estado"></select>
+                            </div>
+                            <div class="small-6 medium-6 end columns">
+                            <label>Cidade</label>
+                                <select id="cidade" name="cidade"></select>
+                            </div>
+                        </div>
+                        <div class="row center">
+                                <div class="large-4 medium-2 columns">
+                                    <label for="">Data</label>
+                                    <input type="date" name="name" value="">
+                                </div>
+                                <div class="large-4 medium-2 end columns">
+                                    <label for="">Hora</label>
+                                    <input type="time" name="name" value="">
+                                </div>
+                        </div>
+
+                        <div class="row collapse">
+                        	<div class="small-2 medium-1 columns">
+                        		<span class="prefix">http://</span>
+                        	</div>
+                        	<div class="small-10 medium-6 end columns">
+                        		<input type="text" placeholder="Entre o URL...">
+                        	</div>
+                        </div>
+
+                        <div class="row">
+                            <div class="small-2 small-centered columns">
+                                <input class="button "type="button" name="name" value="Criar Evento">
+                            </div>
+
+                        </div>
+	                </form>
+
+                <form id="criar-texto">
+                    <div class="row">
+                        <div class="small-4 columns">
+                            <label for="">Titulo</label>
+                            <input type="text" name="name" value="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="small-12 columns">
+                            <textarea name="name" rows="8" cols="40"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="small-2 small-centered columns">
+                            <input type="button" name="name" value="Enviar" class="button">
+                        </div>
+                    </div>
+                </form>
+                <form id="criar-album">
+                    <div class="row">
+                        <form>
+                            <label for="">Insira suas imagens</label>
+                            <input type="file" class="custom-file-input">
+                        </form>
+                    </div>
+                </form>
+
+                <form id="criar-video">
+                    <div class="row">
+                        <form>
+                            <label for="">Insira suas seu video</label>
+                            <input type="file" class="custom-file-input">
+
+                        </form>
+                    </div>
+                </form>
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="panel">
+            <div class="small-9 small-centered columns">
+                <div class="icon-bar five-up" role="navigation">
+                    <a class="item" aria-labelledby="#itemlabel1" id="menu-home">
+                        <img src="/static/img/home.svg">
+                    </a>
+                    <a class="item" aria-labelledby="#itemlabel2" id="menu-eventos">
+                        <img src="/static/img/evento.svg">
+                    </a>
+                    <a class="item" aria-labelledby="#itemlabel3" id="menu-texto">
+                        <img src="/static/img/noticia.svg">
+                    </a>
+                    <a class="item" aria-labelledby="#itemlabel4" id="menu-fotos">
+                        <img src="/static/img/foto.svg">
+                    </a>
+                    <a class="item" aria-labelledby="#itemlabel5" id="menu-camera">
+                        <img src="/static/img/video.svg" >
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    </script src "/vendor/jquery.js"></script>
+    <script src="/static/js/vendor/fastclick.js"></script>
+    <script src="/static/js/foundation.min.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
+    <script type="text/javascript" src="static/js/AbrirMenu.js"></script>
+
+
+
+
+
+    </body>
+</html>
