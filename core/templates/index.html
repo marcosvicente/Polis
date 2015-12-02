@@ -44,33 +44,16 @@
 
 
       <div class="row">
-          <div class="panel">
-                <div class="small-12 small-centered columns">
-                    <div class="icon-bar four-up" role="navigation">
-                    <a class="item" id="menu-eventos" href="">
-                        <img src="/static/img/evento.svg">
-                    </a>
-                    <a class="item" id="menu-texto" >
-                        <img src="/static/img/noticia.svg">
-                    </a>
-                    <a class="item" id="menu-fotos">
-                        <img src="/static/img/foto.svg">
-                    </a>
-                    <a class="item" id="menu-camera">
-                        <img src="/static/img/video.svg" >
-                    </a>
-                </div>
-              </div>
-              <script type="text/javascript" src="http://cidades-estados-js.googlecode.com/files/cidades-estados-v0.2.js"></script>
-                  <script type="text/javascript">
-                     window.onload = function() {
-                         new dgCidadesEstados(
-                             document.getElementById('estado'),
-                             document.getElementById('cidade'),
-                             true
-                         );
-                     }
-                   </script>
+         <div class="panel">
+            <ul class="tabs" data-tab>
+                <li class="tab-title active"><a href="#panel1">Eventos</a></li>
+                <li class="tab-title"><a href="#panel2">Texto</a></li>
+                <li class="tab-title"><a href="#panel3">Fotos</a></li>
+                <li class="tab-title"><a href="#panel4">Video</a></li>
+            </ul>
+
+            <div class="tabs-content">
+                <div class="content active" id="panel1">
                     <form id="criar-evento">
                         <div class="row">
                             <div class="small-6 medium-6  columns">
@@ -108,48 +91,54 @@
                             </div>
 
                         </div>
-	                </form>
-
-                
-                <form id="criar-texto">
-                    <div class="row">
-                        <div class="small-4 columns">
-                            <label for="">Titulo</label>
-                            <input type="text" name="name" value="">
+                    </form>
+                </div>
+                <div class="content" id="panel2">
+                    <form id="criar-texto">
+                        <div class="row">
+                            <div class="small-4 columns">
+                                <label for="">Titulo</label>
+                                <input type="text" name="name" value="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-12 columns">
-                            <textarea name="name" rows="8" cols="40"></textarea>
+                        <div class="row">
+                            <div class="small-12 columns">
+                                <textarea name="name" rows="8" cols="40"></textarea>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-2 small-centered columns">
-                            <input type="button" name="name" value="Enviar" class="button">
+                        <div class="row">
+                            <div class="small-2 small-centered columns">
+                                <input type="button" name="name" value="Enviar" class="button">
+                            </div>
                         </div>
-                    </div>
-                </form>
-                <form id="criar-album">
-                    <div class="row">
-                        <form>
-                            <label for="">Insira suas imagens</label>
-                            <input type="file" class="custom-file-input">
-                        </form>
-                    </div>
-                </form>
+                    </form>
+                </div>
 
-                <form id="criar-video">
-                    <div class="row">
-                        <form>
-                            <label for="">Insira suas seu video</label>
-                            <input type="file" class="custom-file-input">
-                        </form>
-                    </div>
-                </form>
+                <div class="content" id="panel3">
+                    <form id="criar-album">
+                        <div class="row">
+                            <form>
+                                <label for="">Insira suas imagens</label>
+                                <input type="file" class="custom-file-input">
+                            </form>
+                        </div>
+                    </form>
+                </div>
 
+                <div class="content" id="panel4">
+                    <form id="criar-video">
+                        <div class="row">
+                            <form>
+                                <label for="">Insira suas seu video</label>
+                                <input type="file" class="custom-file-input">
+                            </form>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-
     </div>
+
     <div class="row">
         <div class="panel">
             <div class="small-9 small-centered columns">
@@ -179,11 +168,22 @@
     </script src "/vendor/jquery.js"></script>
     <script src="/static/js/vendor/fastclick.js"></script>
     <script src="/static/js/foundation.min.js"></script>
-    <script>
-        $(document).foundation();
-    </script>
-    <script type="text/javascript" src="static/js/AbrirMenu.js"></script>
+    <script src="/static/js/foundation/foundation.tab.js"></script>
 
+    <script>
+        $(document).foundation('tab', 'reflow');
+    </script>
+
+    <script type="text/javascript" src="http://cidades-estados-js.googlecode.com/files/cidades-estados-v0.2.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            new dgCidadesEstados(
+                document.getElementById('estado'),
+                document.getElementById('cidade'),
+                true
+             );
+         }
+    </script>
 
 
 
