@@ -3,6 +3,7 @@
 from django.db import models
 
 
+
 class PostEventos(models.Model):
     nome = models.CharField(max_length=50)
     estado = models.CharField(max_length=50)
