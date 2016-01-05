@@ -1,6 +1,6 @@
 <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
-        <li class="name"><h1><a href="/">Polis</a></h1></li>
+        <li class="name"><h1><a href="{% url 'index' %}">Polis</a></h1></li>
         <li class="toggle-topbar"><a href="#">Menu</a></li>
     </ul>
     <section class="top-bar-section">
@@ -10,7 +10,7 @@
 
             <li class="has-dropdown"><a href="#">Opções</a>
                 <ul class="dropdown">
-                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="{% url 'blog' %}">Blog</a></li>
                     <li><a href="#">Configurações</a></li>
                     <li><a href="">Sair</a></li>
                 </ul>

@@ -1,21 +1,13 @@
-from django.views import generic
 from django.shortcuts import render
-from django.utils import timezone
 
 from .models import PostBlog
 
 
-class BlogList(generic.ListView):
-    template_name = "blog.html"
-    context_object_name = 'blog_list'
-
-    def get_queryset(self):
-        return PostBlog.objects.order_by('-mudanca')
+def blog(request):
+    blog_list = PostBlog.objects.all()
+    return render(request, 'blog.html',  {'blog_list': blog_list})
 
 
-class BlogDetail(generic.DetailView):
-    slug_field = 'titulo'
-    model = PostBlog
-    context_object_name = 'blog'
-    template_name = 'blog_detail.html'
-
+def blog_detail(request, slug):
+    blog = PostBlog.objects.get(slug=slug)
+    return render(request, 'blog.html', {'blog': blog})
