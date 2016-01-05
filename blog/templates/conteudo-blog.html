@@ -1,0 +1,14 @@
+<div class="row">
+    {% for blog in blog_list %}
+    <div class="small-12 medium-6 large-4 columns">
+        <div class="panel">
+                <a href="{{blog.slug}}">test</a>
+                <h3>{{blog.titulo}}</h3>
+                <img src="{{blog.imagem}}" alt="">
+        </div>
+    </div>
+    
+    {% empty %}
+        <h1>Sem Post Ainda !!!</h1>
+    {%endfor%}
+  </div>

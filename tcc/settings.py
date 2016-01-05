@@ -86,7 +86,11 @@ DATABASES = {
     }
 }
 
-TIME_ZONE = 'UTC'
+
+LANGUAGE_CODE = 'pt-br'
+
+
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
@@ -99,3 +103,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_URL = '/media/' 

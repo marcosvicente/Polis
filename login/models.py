@@ -1,9 +1,14 @@
 from django.db import models
 
 
-class Login(models.Model):
-    pass
-
-
 class Cadrastro(models.Model):
-    pass
+    nome = models.CharField(max_length=100)
+    email = models.EmailField(max_length=100)
+    usuario = models.CharField(max_length=100)
+    dia = models.IntegerField()
+    mes = models.CharField(max_length=100)
+    ano = models.IntegerField()
+    senha = models.CharField(max_length=100) 
+
+
+

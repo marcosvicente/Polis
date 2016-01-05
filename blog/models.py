@@ -10,4 +10,4 @@ class PostBlog(models.Model):
     texto = models.TextField()
 
     def __str__(self):
-        return self.titulo 
+        return self.titulo
