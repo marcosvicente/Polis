@@ -11,8 +11,13 @@ main{
 .data{
     font-size: 0.7em;
 }
-
-.artigo{
-    overflow:hidden;
-    margin: 2em;
+#titulo{
+    color:#1c1c1d;
+    font-size: 4em;
+}
+#artigo{
+    margin: 2em 0em;
+    font-size: 1.4em;
+    color:#1c1c1d;
+    
 }
