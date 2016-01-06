@@ -5,9 +5,9 @@ from django.conf import settings
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'core.views.index', name='index'),
-    url(r'^login/', 'login.views.login', name='login'),
-    url(r'^blog/', 'blog.views.blog', name='blog'),
-    url(r'^blog/(?P<slug>[\w_-]+)/$', 'blog.views.blog_detail', name='blog_detail'),
+    url(r'^login/$', 'login.views.login', name='login'),
+    url(r'^blog/$', 'blog.views.blog', name='blog'),
+    url(r'^blog/(?P<slug>[\w-]+)/$', 'blog.views.blog_detail', name='blog_detail'),
 ]
 
 if settings.DEBUG:

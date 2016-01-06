@@ -6,7 +6,7 @@ class PostBlog(models.Model):
     slug = models.SlugField(max_length=100, blank=True, unique=True)
     dia = models.DateField(auto_now=True)
     mudanca = models.DateTimeField(auto_now=True)
-    imagem = models.ImageField(upload_to="media")
+    imagem = models.ImageField(upload_to="blog")
     texto = models.TextField()
 
     def __str__(self):
