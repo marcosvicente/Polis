@@ -5,16 +5,15 @@
                 <ul class="tabs" data-tab>
                     <li class="tab-title active"><a href="#panel1">Login</a></li>
                     <li class="tab-title"><a href="#panel2">Cadastro</a></li>
-
                 </ul>
             </div>
             <div class="tabs-content">
                 <div class="content active" id="panel1">
-                    <form action="">
+                    <form method ="POST" action="/">{% csrf_token %}
                         <div class="row">
                             <div class="small-12 medium-12 large-12 columns">
                                 <label for="">Usuario:</label>
-                                <input type="text" placeholder="Digite seu nome de usuario:">
+                                <input type="text" placeholder="Digite seu login: " >                                
 
                                 <label for="">Senha:</label>
                                 <input type="password" placeholder="Digite sua senha: ">
@@ -25,21 +24,21 @@
                             </div>
 
                             <div class="small-12 medium-10 large-6 large-centered columns">
-                                <input type="submit" class="button" name="Entrar">
+                                <input type="submit" class="button" name="Entrar" value="Entrar">
                             </div>
                         </form>
                     </div>
 
                 </div>
                 <div class="content" id="panel2">
-                    <form action="">
+                    <form method="POST" action="/"> {% csrf_token %}                       
                         <div class="row">
                             <div class"small-12 medium-12 large-12 columns">
                                 <label for="">Nome: </label>
                                 <input type="text" placeholder="Digite seu nome completo:">
 
                                 <label for="">Nome de usario:</label>
-                                <input type="text">
+                                <input type="text" placeholder="Digite seu nome de usuario:">
 
                                 <label for="">Email:</label>
                                 <input type="text" placeholder="Digite seu email:">   
@@ -226,14 +225,14 @@
                                 </div>
                             </div>
                             <label for="">Senha:</label>
-                            <input type="password">
+                            <input type="password" placeholder="Digite sua senha: ">
 
                             <label for="">Insira a sua senha novamente:</label>
-                            <input type="password">
+                            <input type="password" placeholder="Digite sua senha novamente:">
 
 
                             <div class="small-12 medium-10 large-6 large-centered columns">
-                                <input type="submit" class="button" name="Entrar">
+                                <input type="submit" class="button" name="Entrar" value="Criar Conta">
                             </div>
 
                         </div>
@@ -243,3 +242,5 @@
         </div>
     </div>
 </div>
+
+

@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Cadrastro(models.Model):
+class Usuario(models.Model):
     nome = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     usuario = models.CharField(max_length=100)

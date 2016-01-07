@@ -1,17 +1,12 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
 
-from .forms import CadrastroForm
+from .forms import UsuarioForm
 
 
 def login(request):
-   
-    if request.method == 'POST':
-        form = CadrastroForm(request.POST)
-        if form.is_valid():
-            return HttpResponseRedirect('/thanks/')
-    else:
-        form = CadrastroForm()
-
-    return render(request, 'login.html')
-
+    form = UsuarioForm()
+    
+        
+    return render(request, 'login.html',
+                    {'form':form}
+                 )
