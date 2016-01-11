@@ -26,11 +26,4 @@ def __str__(self):
     return self.titulo
 
 
-class PostImage(models.Model):
-    image = models.ImageField()
-    data = models.DateField()
 
-
-class PostVideo(models.Model):
-    video = models.FileField()
-    data = models.DateField()

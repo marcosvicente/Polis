@@ -3,5 +3,12 @@
     {% include "menu.html" %}
     {% include "selecao-menu.html" %}
     {% include "selecao-menu2.html" %}
+    
+    {% if user.is_authenticated %}
+        <p>Welcome, {{ user.username }}  <a href="{% url 'logout' %}">[logout]</a></p>
+    {% else %}
+        <p>Welcome, Guest <a href="{% url 'login' %}">[login]</a></p>
+    {% endif %}
+
 
 {% endblock%}

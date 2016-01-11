@@ -1,14 +1,33 @@
+#_*_ coding: utf-8 _*_
 from django import forms
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate
 
-from .models import Usuario
 
+class LoginForm(forms.Form):
+    username = forms.CharField(
+        label='Nome de usuário',
+        max_length = 30
+    )
+    password = forms.CharField(
+        label = 'Senha',
+        max_length = 30,
+        widget=forms.PasswordInput
+    )
+    def clean_username(self):
+        username = self.cleaned_data.get('username')
+        if not User.objects.filter(username=username):
+            raise forms.ValidationError(u'Esse nome de usuário não exite')
+        return username
 
-class UsuarioForm(forms.Form):
-    nome = forms.CharField(max_length=100)
-    email = forms.EmailField(max_length=100)
-    usuario = forms.CharField(max_length=100)
-    dia = forms.IntegerField()
-    mes = forms.CharField(max_length=100)
-    ano = forms.IntegerField()
-    senha = forms.CharField(max_length=100)
-   
+    def clean_password(self):
+        username = self.cleaned_data.get('username')
+        password = self.cleaned_data.get('password')
+        if not authenticate(username=username , password=password):
+            raise forms.ValidationError(u'Senha incorreta')
+        return password
+
+    def save(self):
+        username = self.cleaned_data.get("username")
+        password = self.cleaned_data.get("password")
+        return authenticate(username =username, password=password)
