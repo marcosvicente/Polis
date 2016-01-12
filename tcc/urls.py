@@ -7,12 +7,14 @@ urlpatterns = [
     url(r'^$', 'core.views.index', name='index'),
     url(r'^blog/$', 'blog.views.blog', name='blog'),
     url(r'^blog/(?P<slug>[\w-]+)/$', 'blog.views.blog_detail', name='blog_detail'),
-    url(
-        r'^login/$',
-        'django.contrib.auth.views.login',
+    url(r'^login/$',
+        'django.contrib.auth.views.login', 
         name='login',
         kwargs={'template_name': 'login.html'}
         ),
+
+    url(r'^login/cadastro/$',  'login.views.cadastro', name='cadastro'),
+
     url(
         r'^logout/$',
         'django.contrib.auth.views.logout',
