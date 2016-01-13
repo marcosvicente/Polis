@@ -1,33 +1,12 @@
 <div class="row">
-    <form action="{% url 'index'%}" method="POST">  {% csrf_token %} 
+    <form action="" method="POST"> 
+        {% csrf_token %} 
         <div class="small-12 medium-6 large-6 columns">
             <div class="panel">
             <h2 class="">Crie uma conta aqui</h2>
-            <label for="">Username:</label>
-            {{cadastro.username}}
-            {{cadastro.username.error}}
-
-            <label for="">Primeiro nome:</label>
-            {{cadastro.first_name}}
-            {{cadastro.first_name.error}}
-
-            <label for="">Ultimo nome:</label>
-            {{cadastro.last_name}}
-            {{cadastro.last_name.error}}
-
-            <label for="">Email</label>
-            {{cadastro.email}}
-            {{cadastro.email.error}}
-
-            <label for="">Senha:</label>
-            {{cadastro.password}}
-            {{cadastro.password.error}}
-
-            <label for="">Digite novamente a senha:</label>
-            {{cadastro.password}}
-            {{cadastro.senha.password}}
-
-            <input type="submit" value="Criar conta" class="button radius">
+                {{form}} 
+            <input type="submit" value="Criar conta" class="button radius">            
+            <input type="hidden" name="next" value="{{ next }}" />
         </div>
     </div>
     </form>
