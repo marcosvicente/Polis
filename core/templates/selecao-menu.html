@@ -1,0 +1,49 @@
+{% block content%}
+
+<div class="row">
+    <div class="panel">
+        <div class="row">
+            <div class="large-5 large-centered  columns ">
+                <dl class="tabs" data-tab>
+                    <dd class="active" >
+                        <a href="#panel1"id="post-evento">
+                            <img src="/static/img/evento.svg">
+                        </a>
+                    </dd>
+                    <dd>
+                        <a href="#panel2" id="post-texto">
+                            <img src="/static/img/noticia.svg">
+                        </a>
+                    </dd>
+                    <dd >
+                        <a href="#panel3" id="post-foto">
+                            <img src="/static/img/foto.svg">
+                        </a>
+                    </dd>
+                    <dd>
+                        <a href="#panel4" id="post-video">
+                            <img src="/static/img/video.svg">
+                        </a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="tabs-content">
+            <div class="content active" id="panel1">
+                {% include "post_eventos.html"%}
+            </div>
+
+            <div class="content" id="panel2">
+                {% include  "post_texto.html"%}
+            </div>
+            <div class="content" id="panel3">
+                {% include "post_imagem.html"%}
+            </div>
+
+            <div class="content" id="panel4">
+                {% include "post_video.html"%}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
