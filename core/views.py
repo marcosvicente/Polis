@@ -5,22 +5,21 @@ from .models import PostTexto,  PostTextoForm,  PostEventos,PostEventosForm, Pos
 
 @login_required(login_url='/login')
 def index(request):
-    form_evento = PostEventosForm(request.POST or None)
     form_texto = PostTextoForm(request.POST or None )
     form_imagem = PostImageForm(request.POST or None)
     form_video = PostVideoForm(request.POST or None)
 
 
-# if request.method == 'POST':
-#    form_evento = PostEventosForm(request.POST or None)
-#        if form_evento.is_valid():
-#            post = form_evento.save(commit=false)
-#            post.usuario = request.user.username
-#            post.criado = timezone.now()
-#            post.save()
-#        else: 
-#            form_evento = PostEventosForm()
+    if request.method == 'POST':
+        form_evento = PostEventosForm(request.POST or None)
+        if form_evento.is_valid():
+            form_evento = form.save(commit=False)
+            form_evento.author = request.user
+            form_evento.save()     
 
+    else:
+       form_evento = PostEventosForm() 
+            
        
     return render(request, 'index.html',
             {

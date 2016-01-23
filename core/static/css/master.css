@@ -4,14 +4,20 @@
 /***************
  * Seleção menu*
  * ************/
-.button {
+.botao {
     background: #fc7f00;
     display:block;
     margin-left: auto;
     margin-right: auto;
+    color: white;
+    padding: 1.2em;
+    font-size: 1em;   
+
+    border:0px solid #fff;
 
 }
-.button:hover{
+.botao:hover{
+    
     background: #c67f00;
 }
 #post-evento{
