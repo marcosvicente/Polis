@@ -1,7 +1,6 @@
 <div class="row left">
     <div class="small-12 medium-8 large-5 columns">
         <div class="panel">
-
             <form method="post" action="{% url 'login' %}">
                 {% csrf_token %}
 
@@ -11,25 +10,13 @@
                     </div>
                     <div class="small-12 medium-10 large-6 large-centered columns">
                         <input type="submit" class="button radius" name="Entrar" value="Entrar">
-
                         <input type="hidden" name="next" value="{{ next }}" />
+
+                        <a href="{%url 'cadastro'%}" class="text-center">Cadastre uma conta </a>
                     </div>
-                </form>
-
-<<<<<<< HEAD
-            </div>
-        </div>
-        <div class="row">
-            <div class="small-12 medium-8 lerge-5 large-centered columns">
-                <a href="{%url 'cadastro'%}" class="button">Cadastre uma conta </a>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
-=======
-                <a href="{%url 'cadastro'%}">Cadastre uma conta </a>
+</div> 
 
-            </div>
-        </div> 
-    </div>
-
->>>>>>> 7641b8501096ce666f5b2ea9fa2624690faa928d

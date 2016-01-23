@@ -1,5 +1,4 @@
 <div class="row">
-<<<<<<< HEAD
     <form action="{%url 'login'%}" method="POST"> 
         {% csrf_token %} 
         <div class="small-12 medium-6 large-6 columns">
@@ -15,17 +14,10 @@
                 <label for="">Digite sua senha novamente: </label>
                 {{form.password2}}
 
-=======
-    <form action="" method="POST"> 
-        {% csrf_token %} 
-        <div class="small-12 medium-6 large-6 columns">
-            <div class="panel">
-            <h2 class="">Crie uma conta aqui</h2>
-                {{form}} 
->>>>>>> 7641b8501096ce666f5b2ea9fa2624690faa928d
-            <input type="submit" value="Criar conta" class="button radius">            
-            <input type="hidden" name="next" value="{{ next }}" />
+
+                <input type="submit" value="Criar conta" class="button radius">            
+                <input type="hidden" name="next" value="{{ next }}" />
+            </div>
         </div>
-    </div>
     </form>
 </div>
