@@ -9,13 +9,12 @@ def index(request):
     form_imagem = PostImageForm(request.POST or None)
     form_video = PostVideoForm(request.POST or None)
 
-
     if request.method == 'POST':
         form_evento = PostEventosForm(request.POST or None)
         if form_evento.is_valid():
-            posteventosform = form.save(commit=False)
-            posteventosform.author = request.user
-            posteventosform.save()     
+            form_evento = form.save(commit=False)
+            form_evento.author = request.user
+            form_evento.save()     
 
     else:
        form_evento = PostEventosForm() 
