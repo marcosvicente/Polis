@@ -13,9 +13,9 @@ def index(request):
     if request.method == 'POST':
         form_evento = PostEventosForm(request.POST or None)
         if form_evento.is_valid():
-            form_evento = form.save(commit=False)
-            form_evento.author = request.user
-            form_evento.save()     
+            posteventosform = form.save(commit=False)
+            posteventosform.author = request.user
+            posteventosform.save()     
 
     else:
        form_evento = PostEventosForm() 
