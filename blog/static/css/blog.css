@@ -1,9 +1,17 @@
+.body{
+    font:62.5%/1.4 sans-serif;
+}
+
 main{
     width: 100%;
     max-width: 940px;
     margin: 0 auto;
 }
-
+*, *:before, *:after{
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
 
 .data{
     font-size: 0.7em;
